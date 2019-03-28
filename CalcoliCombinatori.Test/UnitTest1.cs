@@ -12,20 +12,23 @@ namespace CalcoliCombinatori.Test
         [DataRow(5, 120)]
         [DataRow(10, 3628800)]
         [DataRow(50, 0)]
-        public void TestFattoriale(int a, int b)
+        public void TestFattoriale(long a, long b)
         {
             //richiamo la Library e confronto i risultati
-            int risultato_calcolato = EquazioniLibrary.CalcoliCombinatori.Fattoriale(a);
+            long risultato_calcolato = EquazioniLibrary.CalcoliCombinatori.Fattoriale(a);
+
+            //confronto il risultato del test con quello ottenuto dalla library
+            Assert.AreEqual(risultato_calcolato, b);
         }
 
         /*
-            Ho scelto il tipo di dato Intero (Int) poichè il Fattoriale
-            è calcolabile sono con i numeri Naturali.
+            Ho scelto il tipo di dato Long poichè il Fattoriale
+            è calcolabile sono con i numeri Naturali. 
 
             A causa di questa restrizione però il massimo numero di cui 
             è possibile calcolare il Fattoriale in questo programma è 20.
             Una volta superato questo numero il Fattoriale calcolato
-            risulta come valore di lunghezza superiore a 32 bit.
+            và in overflow. 
         */
     }
 }

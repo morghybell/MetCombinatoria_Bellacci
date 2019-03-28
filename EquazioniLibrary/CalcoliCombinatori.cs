@@ -8,12 +8,12 @@ namespace EquazioniLibrary
 {
     public class CalcoliCombinatori
     {
-        public static int Fattoriale(int n)
+        public static long Fattoriale(long n)
         {
             //inizializzo le variabile di ritorno
-            int fattoriale = 1;
+            long fattoriale = 1;
 
-            //Inserisco una if di controllo poichè i numeri superiori a 20 generano come fattoriale un numero superiore a 32 bit
+            //Inserisco una if di controllo poichè i numeri superiori a 20 generano un errore di overflow
             if (n > 20)
             {
                 fattoriale = 0;
